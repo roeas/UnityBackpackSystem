@@ -19,6 +19,7 @@ public class Item : MonoBehaviour
         }
         else {
             inventoryBag.itemList.Add(inventoryItem);
+            InventoryManager.CreatItem(inventoryItem);
         }
     }
 }
