@@ -6,7 +6,7 @@ public class Item : MonoBehaviour
 {
     public InventoryItem inventoryItem;
     public InventoryBag inventoryBag;
-
+    private GameObject tmpGameObject;
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Player")) {
             AddItemToBag();
@@ -21,5 +21,6 @@ public class Item : MonoBehaviour
             inventoryBag.itemList.Add(inventoryItem);
             InventoryManager.CreatItem(inventoryItem);
         }
+        InventoryManager.RefreshItem();
     }
 }

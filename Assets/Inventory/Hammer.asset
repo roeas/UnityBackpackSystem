@@ -9,7 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc3c4c53b1d6a154facc613161d608e5, type: 3}
-  m_Name: PlayerBag
+  m_Script: {fileID: 11500000, guid: d533a1f3e978f4040b2f478232d15b3d, type: 3}
+  m_Name: Hammer
   m_EditorClassIdentifier: 
-  itemList: []
+  itemName: Hammer
+  itemSprite: {fileID: 21300020, guid: 03dd1ef6fb163214c9e1ac0242dab3ba, type: 3}
+  itemCount: 6
+  itemInfo: This is a hammer!
+  equipable: 1

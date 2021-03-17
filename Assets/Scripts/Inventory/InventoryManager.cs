@@ -17,12 +17,23 @@ public class InventoryManager : MonoBehaviour
             Destroy(gameObject);
         }
         instance = this;
+        RefreshItem();
+    }
+    public static void UpdateItemInfo(string info) {
+        instance.itemInformation.text = info;
     }
     public static void CreatItem(InventoryItem itemIn) {
-        Slot Newitem = Instantiate(instance.slotPrefab, instance.slotGrid.transform.position, Quaternion.identity);
-        Newitem.gameObject.transform.SetParent(instance.slotGrid.transform);
-        Newitem.slotItem = itemIn;
-        Newitem.slotImage.sprite = itemIn.itemSprite;
-        Newitem.slotNum.text = itemIn.itemCount.ToString();
+        Slot newItem = Instantiate(instance.slotPrefab, instance.slotGrid.transform, false);//将slotPrefab生成为slotGrid的子物体
+        newItem.slotItem = itemIn;
+        newItem.slotImage.sprite = itemIn.itemSprite;
+        newItem.slotNum.text = itemIn.itemCount.ToString();
+    }
+    public static void RefreshItem() {
+        for (int i = 0; i < instance.slotGrid.transform.childCount; i++) {
+            Destroy(instance.slotGrid.transform.GetChild(i).gameObject);
+        }
+        for(int i = 0; i < instance.playerBag.itemList.Count; i++) {
+            CreatItem(instance.playerBag.itemList[i]);
+        }
     }
 }

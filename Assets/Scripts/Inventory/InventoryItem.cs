@@ -9,6 +9,6 @@ public class InventoryItem : ScriptableObject
     public Sprite itemSprite;
     public int itemCount = 1;
     [TextArea]
-    public string itemInformation;
+    public string itemInfo;
     public bool equipable;
 }
