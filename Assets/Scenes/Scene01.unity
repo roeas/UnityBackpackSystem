@@ -232,7 +232,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.116931275
+  m_Mass: 0.19059971
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -254,7 +254,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.7787766}
+  m_Offset: {x: 0, y: -0.71824664}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -265,7 +265,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6085288, y: 0.19215405}
+  m_Size: {x: 0.6085288, y: 0.31321394}
   m_EdgeRadius: 0
 --- !u!95 &164073228
 Animator:
@@ -400,9 +400,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerBag: {fileID: 11400000, guid: 1acf144d472aba64b95a35f1ff78d140, type: 2}
   slotGrid: {fileID: 1348329264}
-  slotPrefab: {fileID: 4676565021974828945, guid: 305f9d1aec6f05f42b7badba999afc91,
+  emptySlot: {fileID: 1561039349370473234, guid: 305f9d1aec6f05f42b7badba999afc91,
     type: 3}
   itemInformation: {fileID: 1183876784}
+  slotList: []
 --- !u!1 &221514668
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,7 +514,7 @@ RectTransform:
   m_Children:
   - {fileID: 1922865686}
   m_Father: {fileID: 1978710857}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -582,7 +583,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b75aa2349cb309240afa0694dffe6027, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 11068e6cb0f18044e93ad0154715d958, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -906,7 +907,7 @@ RectTransform:
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1978710857}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1095,8 +1096,8 @@ GameObject:
   m_Component:
   - component: {fileID: 627401898}
   - component: {fileID: 627401897}
-  - component: {fileID: 627401896}
   - component: {fileID: 627401895}
+  - component: {fileID: 627401896}
   m_Layer: 0
   m_Name: Gear_10
   m_TagString: Untagged
@@ -1550,7 +1551,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Item Information
+  m_Text: /*Item Information*/
 --- !u!222 &1183876785
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1626,7 +1627,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1978710857}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1646,15 +1647,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 4
+    m_Left: 0
     m_Right: 0
-    m_Top: 4
+    m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 51.2, y: 51.2}
-  m_Spacing: {x: 14.82, y: 14.09}
+  m_CellSize: {x: 55, y: 55}
+  m_Spacing: {x: 11, y: 11}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!114 &1348329267
@@ -1670,7 +1671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -11825,8 +11826,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1956975767}
   - component: {fileID: 1956975766}
-  - component: {fileID: 1956975765}
   - component: {fileID: 1956975764}
+  - component: {fileID: 1956975765}
   m_Layer: 0
   m_Name: Gear_3 (1)
   m_TagString: Untagged
@@ -11949,6 +11950,7 @@ GameObject:
   - component: {fileID: 1978710857}
   - component: {fileID: 1978710859}
   - component: {fileID: 1978710858}
+  - component: {fileID: 1978710860}
   m_Layer: 5
   m_Name: Bag
   m_TagString: Untagged
@@ -11968,10 +11970,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1580930538}
-  - {fileID: 538281540}
-  - {fileID: 1348329265}
-  - {fileID: 1183876783}
   - {fileID: 289834001}
+  - {fileID: 538281540}
+  - {fileID: 1183876783}
+  - {fileID: 1348329265}
   m_Father: {fileID: 190168154}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12017,6 +12019,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1978710856}
   m_CullTransparentMesh: 0
+--- !u!114 &1978710860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978710856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 012af2c554025ce4fafc576665d4406a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2009899565
 GameObject:
   m_ObjectHideFlags: 0
@@ -12027,8 +12041,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2009899568}
   - component: {fileID: 2009899567}
-  - component: {fileID: 2009899566}
   - component: {fileID: 2009899569}
+  - component: {fileID: 2009899566}
   m_Layer: 0
   m_Name: Gear_3
   m_TagString: Untagged

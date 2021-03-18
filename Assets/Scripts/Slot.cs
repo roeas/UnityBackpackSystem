@@ -5,14 +5,26 @@ using UnityEngine.UI;
 
 public class Slot : MonoBehaviour
 {
-    public InventoryItem slotItem;
+    public GameObject slotItem;
     public Image slotImage;
-    public Text slotNum;
+    public Text slotCount;
+    public string slotInfo;
 
     private void OnEnable() {
         InventoryManager.UpdateItemInfo("");
     }
-    public void OnItemClicked() {
-        InventoryManager.UpdateItemInfo(slotItem.itemInfo);
+    public void OnItemClicked() {//在button中调用
+        InventoryManager.UpdateItemInfo(slotInfo);
+    }
+    public void InitSlot(InventoryItem inventoryItem) {
+        if (inventoryItem == null) {
+            slotItem.SetActive(false);
+            return;
+        }
+        else {
+            slotImage.sprite = inventoryItem.itemSprite;
+            slotCount.text = inventoryItem.itemCount.ToString();
+            slotInfo = inventoryItem.itemInfo;
+        }
     }
 }

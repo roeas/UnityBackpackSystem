@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Hammer
   itemSprite: {fileID: 21300020, guid: 03dd1ef6fb163214c9e1ac0242dab3ba, type: 3}
-  itemCount: 6
+  itemCount: 1
   itemInfo: This is a hammer!
   equipable: 1

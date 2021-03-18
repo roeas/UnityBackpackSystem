@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Sword
   itemSprite: {fileID: 21300006, guid: 03dd1ef6fb163214c9e1ac0242dab3ba, type: 3}
-  itemCount: 14
+  itemCount: 1
   itemInfo: This is a sword!
   equipable: 1

@@ -40,8 +40,12 @@ public class PlayerMovement : MonoBehaviour
     }
     void OpenBag() {
         if (Input.GetKeyDown(KeyCode.E)) {
-            isOpen = !isOpen;
-            bag.SetActive(isOpen);
+            if (bag.activeSelf) {
+                bag.SetActive(false);
+            }
+            else {
+                bag.SetActive(true);
+            }
         }
     }
 }
