@@ -47,7 +47,6 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             return;
         }
         Debug.Log("firstIndex: " + firstIndex + " " + "secondIndex: " + secondIndex);
-        //Swap(inventoryBag.itemList[firstIndex], inventoryBag.itemList[secondIndex]);
         InventoryItem tmp = inventoryBag.itemList[firstIndex];
         inventoryBag.itemList[firstIndex] = inventoryBag.itemList[secondIndex];
         inventoryBag.itemList[secondIndex] = tmp;
@@ -62,9 +61,4 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         }
         return -1;
     }
-    //private void Swap<T>(T x, T y) {
-    //    T tmp = x;
-    //    x = y;
-    //    y = tmp;
-    //}
 }

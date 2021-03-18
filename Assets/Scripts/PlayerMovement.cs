@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else {
                 bag.SetActive(true);
+                InventoryManager.UpdateGUI();
             }
         }
     }
