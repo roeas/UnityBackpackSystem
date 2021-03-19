@@ -40,12 +40,12 @@ public class PlayerMovement : MonoBehaviour
     }
     void OpenBag() {
         if (Input.GetKeyDown(KeyCode.E)) {
+            InventoryManager.UpdateGUI();
             if (bag.activeSelf) {
                 bag.SetActive(false);
             }
             else {
                 bag.SetActive(true);
-                InventoryManager.UpdateGUI();
             }
         }
     }

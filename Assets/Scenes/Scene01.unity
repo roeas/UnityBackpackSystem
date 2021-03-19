@@ -1318,7 +1318,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee78768187f667a44a4118dd93b463fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InventoryBag: {fileID: 11400000, guid: 1acf144d472aba64b95a35f1ff78d140, type: 2}
+  inventoryBag: {fileID: 11400000, guid: 1acf144d472aba64b95a35f1ff78d140, type: 2}
+  item1: {fileID: 11400000, guid: a6a0ce4263b3a3a439bd5dc9a35d1ed0, type: 2}
+  item2: {fileID: 11400000, guid: 5ee98f43b3f75db47bf57e9641bd5daa, type: 2}
 --- !u!4 &837293315
 Transform:
   m_ObjectHideFlags: 0
@@ -1327,7 +1329,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 837293313}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.6478187, y: -0.17726377, z: -0.97400796}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
