@@ -28,6 +28,13 @@ public class SaveLoadManager : MonoBehaviour
         file2.Close();
         file3.Close();
     }
+    //private void SaveInFile<T>(T inventoryIn) {
+    //    BinaryFormatter formatter = new BinaryFormatter();
+    //    FileStream file = File.Create(Application.persistentDataPath + "/SaveData/" + nameof(inventoryIn) + ".bin");//nameof(inventoryIn) == "inventoryIn"
+    //    string json = JsonUtility.ToJson(inventoryIn);
+    //    formatter.Serialize(file, json);
+    //    file.Close();
+    //}
     public void LoadGame() {
         BinaryFormatter formatter = new BinaryFormatter();
         if(File.Exists(Application.persistentDataPath + "/SaveData/inventoryBag.bin")) {
