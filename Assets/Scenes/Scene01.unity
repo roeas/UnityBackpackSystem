@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bag: {fileID: 1978710856}
-  speed: 200
+  speed: 300
 --- !u!50 &164073226
 Rigidbody2D:
   serializedVersion: 4

@@ -28,8 +28,9 @@ public class PlayerMovement : MonoBehaviour
     void Movement() {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        movement = movement * speed * Time.fixedDeltaTime;
-        body.velocity = new Vector2(movement.x, movement.y);
+        //movement = movement * speed * Time.fixedDeltaTime;
+        movement = new Vector2(movement.x, movement.y).normalized;
+        body.velocity = movement * speed * Time.deltaTime;
     }
     void SwitchAnime() {
         if (movement != Vector2.zero) {//保证Horizontal归0时，保留movment的值来切换idle动画的blend tree
