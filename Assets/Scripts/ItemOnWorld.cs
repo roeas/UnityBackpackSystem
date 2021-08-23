@@ -14,13 +14,14 @@ public class ItemOnWorld : MonoBehaviour
         }
     }
     void AddItemToBag() {
-        if (inventoryBag.itemList.Contains(inventoryItem)) {//背包内已存在此物品
-            inventoryItem.itemCount++;//更新物品数据
+        if (inventoryBag.itemList.Contains(inventoryItem)) {
+            inventoryItem.itemCount++;
         }
         else {//背包内不存在此物品
             for (int i = 0; i < inventoryBag.itemList.Count; i++) {
-                if (inventoryBag.itemList[i] == null) {//顺序找到背包内第一个空余位置
-                    inventoryBag.itemList[i] = inventoryItem;//更新背包数据
+                //顺序找到背包内第一个空余位置
+                if (inventoryBag.itemList[i] == null) {
+                    inventoryBag.itemList[i] = inventoryItem;
                     break;
                 }
                 //背包满啦！

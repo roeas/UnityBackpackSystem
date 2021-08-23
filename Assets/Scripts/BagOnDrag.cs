@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class BagOnDrag : MonoBehaviour, IDragHandler
 {
-    RectTransform rectTransform;
+    private RectTransform rectTransform;
     private void Awake() {
         rectTransform = GetComponent<RectTransform>();
     }

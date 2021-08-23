@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bb64c36d716ec04fa0c65b18fc95663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryBag: {fileID: 11400000, guid: 1acf144d472aba64b95a35f1ff78d140, type: 2}
+  bag: {fileID: 11400000, guid: 1acf144d472aba64b95a35f1ff78d140, type: 2}
 --- !u!225 &2026010947185019873
 CanvasGroup:
   m_ObjectHideFlags: 0

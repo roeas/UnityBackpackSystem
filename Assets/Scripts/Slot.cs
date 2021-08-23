@@ -13,10 +13,11 @@ public class Slot : MonoBehaviour
     private void OnEnable() {
         InventoryManager.UpdateItemInfo("");
     }
-    public void OnItemClicked() {//在button中调用
+    public void OnItemClicked() {//在作Item中以OnClick的形式调用
         InventoryManager.UpdateItemInfo(slotInfo);
     }
     public void InitSlot(InventoryItem inventoryItem) {
+        //将传入的Itme信息写入该Slot的子物体
         if (inventoryItem == null) {
             slotItem.SetActive(false);
             return;
