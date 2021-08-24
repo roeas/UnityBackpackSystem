@@ -9,49 +9,44 @@ public class SaveLoadManager : MonoBehaviour
     public InventoryBag inventoryBag;
     public InventoryItem item1;
     public InventoryItem item2;
-    public void SaveGame() {
-        Debug.Log(Application.persistentDataPath);
-        if (!Directory.Exists(Application.persistentDataPath + "/SaveData")) {
-            Directory.CreateDirectory(Application.persistentDataPath + "/SaveData");
-        }
-        BinaryFormatter formatter = new BinaryFormatter();
-        FileStream file1 = File.Create(Application.persistentDataPath + "/SaveData/inventoryBag.bin");
-        FileStream file2 = File.Create(Application.persistentDataPath + "/SaveData/item1.bin");
-        FileStream file3 = File.Create(Application.persistentDataPath + "/SaveData/item2.bin");
-        string json1 = JsonUtility.ToJson(inventoryBag);
-        string json2 = JsonUtility.ToJson(item1);
-        string json3 = JsonUtility.ToJson(item2);
-        formatter.Serialize(file1, json1);
-        formatter.Serialize(file2, json2);
-        formatter.Serialize(file3, json3);
-        file1.Close();
-        file2.Close();
-        file3.Close();
+
+    private string PATH;
+    private void Awake() {
+        PATH = Application.persistentDataPath;
     }
-    //private void SaveInFile<T>(T inventoryIn) {
-    //    BinaryFormatter formatter = new BinaryFormatter();
-    //    FileStream file = File.Create(Application.persistentDataPath + "/SaveData/" + nameof(inventoryIn) + ".bin");//nameof(inventoryIn) == "inventoryIn"
-    //    string json = JsonUtility.ToJson(inventoryIn);
-    //    formatter.Serialize(file, json);
-    //    file.Close();
-    //}
-    public void LoadGame() {
+    public void SaveGame() {
+        //在bottom中被调用
+        Debug.Log(PATH);
+        if (!Directory.Exists(PATH + "/SaveData")) {
+            Directory.CreateDirectory(PATH + "/SaveData");
+        }
+
+        SaveData(inventoryBag, nameof(inventoryBag));
+        SaveData(item1, nameof(item1));
+        SaveData(item2, nameof(item2));
+    }
+    private void SaveData<T>(T so, string name) {
         BinaryFormatter formatter = new BinaryFormatter();
-        if(File.Exists(Application.persistentDataPath + "/SaveData/inventoryBag.bin")) {
-            FileStream file = File.Open(Application.persistentDataPath + "/SaveData/inventoryBag.bin", FileMode.Open);
-            JsonUtility.FromJsonOverwrite((string)formatter.Deserialize(file), inventoryBag);
-            file.Close();
-        }
-        if (File.Exists(Application.persistentDataPath + "/SaveData/item1.bin")) {
-            FileStream file = File.Open(Application.persistentDataPath + "/SaveData/item1.bin", FileMode.Open);
-            JsonUtility.FromJsonOverwrite((string)formatter.Deserialize(file), item1);
-            file.Close();
-        }
-        if (File.Exists(Application.persistentDataPath + "/SaveData/item2.bin")) {
-            FileStream file = File.Open(Application.persistentDataPath + "/SaveData/item2.bin", FileMode.Open);
-            JsonUtility.FromJsonOverwrite((string)formatter.Deserialize(file), item2);
-            file.Close();
-        }
+        FileStream file = File.Create(PATH + "/SaveData/" + name + ".bin");
+        string json = JsonUtility.ToJson(so);
+        formatter.Serialize(file, json);
+        file.Close();
+    }
+    public void LoadGame() {
+        //在bottom中被调用
+        LodData(inventoryBag, nameof(inventoryBag));
+        LodData(item1, nameof(item1));
+        LodData(item2, nameof(item2));
+
         InventoryManager.UpdateGUI();
+    }
+    private void LodData<T>(T so, string name) {
+        BinaryFormatter formatter = new BinaryFormatter();
+        if (File.Exists(PATH + "/SaveData/" + name + ".bin")) {
+            FileStream file = File.Open(PATH + "/SaveData/" + name + ".bin", FileMode.Open);
+            string json = (string)formatter.Deserialize(file);
+            JsonUtility.FromJsonOverwrite(json, so);
+            file.Close();
+        }
     }
 }
